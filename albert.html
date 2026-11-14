@@ -197,6 +197,53 @@
                 font-size: 2rem;
             }
         }
+
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-left: 3px solid #38bdf8;
+            padding-left: 1.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .activity-item {
+            position: relative;
+        }
+
+        .activity-item::before {
+            content: '';
+            position: absolute;
+            left: -1.95rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .activity-date {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #0284c7;
+            background-color: #e0f2fe;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 0.4rem;
+        }
+
+        .activity-item h3 {
+            color: #0f172a;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .activity-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -207,6 +254,7 @@
             <li><a href="#tentang">Tentang</a></li>
             <li><a href="#keahlian">Keahlian</a></li>
             <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#aktivitas">Aktivitas</a></li> 
             <li><a href="#hobi">Hobi</a></li>
             <li><a href="#kontak">Kontak</a></li>
         </ul>
@@ -237,6 +285,27 @@
                 <span class="skill-tag">Git & GitHub</span>
                 <span class="skill-tag">Perancangan Database (ERD)</span>
                 <span class="skill-tag">Analisis Sistem (SRS)</span>
+            </div>
+        </section>
+
+        <section id="aktivitas">
+            <h2>Aktivitas & Pengalaman</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-date">2026 - Sekarang</span>
+                    <h3>Pengembangan Aplikasi Web & Backend</h3>
+                    <p>Aktif mengerjakan proyek pengembangan aplikasi menggunakan Java Spring Boot dan pengelolaan repositori tim dengan Git & GitHub.</p>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">2025 - 2026</span>
+                    <h3>Program Pelatihan AI & Data Engineering</h3>
+                    <p>Mengikuti program intensif pengembangan kecerdasan buatan dan rekayasa data untuk memperdalam analisis sistem.</p>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-date">2024 - Sekarang</span>
+                    <h3>Kegiatan Organisasi & Kepanitiaan Kampus</h3>
+                    <p>Terlibat dalam koordinasi tim, dokumentasi sistem, dan manajemen acara kemahasiswaan.</p>
+                </div>
             </div>
         </section>
 
@@ -284,6 +353,10 @@
                 <p><strong>GitHub:</strong> <a href="https://github.com/albertnatanael02" target="_blank">github.com/albertnatanael02</a></p>
             </div>
         </section>
+
+        <selection>
+            <div class="sketchfab-embed-wrapper"> <iframe title="Watchman of doom" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/915a33262d7145acbf3764391c972a85/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/watchman-of-doom-915a33262d7145acbf3764391c972a85" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Watchman of doom </a> by <a href="https://sketchfab.com/html_bot23" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> html_bot23 </a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </selection>
 
     </div>
 
