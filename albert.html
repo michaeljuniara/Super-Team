@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Albert Natanael</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            margin-bottom: 1.2rem;
+            background-color: #475569;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p.tagline {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #7dd3fc;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: #1e293b;
+            border-bottom: 3px solid #38bdf8;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: #0284c7;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1e293b;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Albert Natanael</div>
+        <ul>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#keahlian">Keahlian</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#hobi">Hobi</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="albert.jpeg" alt="Foto Albert Natanael" class="profile-img">
+        <h1>Albert Natanael</h1>
+        <p class="tagline">Mahasiswa Sistem Informasi | Pengembang Web | Antusias Teknologi</p>
+        <a href="#kontak" class="btn">Hubungi Saya</a>
+    </header>
+
+    <div class="container">
+
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+            <p>
+                Halo! Saya <strong>Albert Natanael</strong>. Saya memiliki ketertarikan besar di bidang pengembangan perangkat lunak, analisis sistem, dan teknologi informasi. Saya senang mempelajari hal-hal baru, memecahkan masalah melalui kode, serta membangun aplikasi yang bermanfaat dan mudah digunakan.
+            </p>
+        </section>
+
+        <section id="keahlian">
+            <h2>Keahlian</h2>
+            <div class="skills-list">
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Perancangan Database (ERD)</span>
+                <span class="skill-tag">Analisis Sistem (SRS)</span>
+            </div>
+        </section>
+
+        <section id="proyek">
+            <h2>Proyek Terbaru</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Aplikasi Web Spring Boot</h3>
+                    <p>Pengembangan aplikasi backend dan endpoint REST API menggunakan Java Spring Boot.</p>
+                </div>
+                <div class="card">
+                    <h3>Dokumentasi & Analisis Sistem</h3>
+                    <p>Perancangan Entity Relationship Diagram (ERD), Use Case, dan System Requirements Specification (SRS).</p>
+                </div>
+                <div class="card">
+                    <h3>Website Portofolio Pribadi</h3>
+                    <p>Website profil responsif yang dibangun menggunakan HTML5 dan CSS3 murni.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobi">
+            <h2>Hobi & Minat</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🎵 Bermain Musik</h3>
+                    <p>Memainkan gitar akustik dan drum di waktu luang untuk melepas penat.</p>
+                </div>
+                <div class="card">
+                    <h3>🎮 Gaming</h3>
+                    <p>Bermain game strategi dan kompetitif, serta mengulik pengaturan performa PC.</p>
+                </div>
+                <div class="card">
+                    <h3>💻 Eksplorasi Teknologi</h3>
+                    <p>Mencoba automasi script, optimasi sistem, dan mempelajari framework pemrograman baru.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak">
+            <h2>Kontak</h2>
+            <div class="contact-info">
+                <p>Tertarik untuk berdiskusi atau berkolaborasi? Silakan hubungi saya melalui:</p>
+                <p><strong>Email:</strong> <a href="mailto:albertnatanael02@gmail.com">albertnatanael02@gmail.com</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/albertnatanael02" target="_blank">github.com/albertnatanael02</a></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Albert Natanael. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
