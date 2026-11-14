@@ -244,8 +244,199 @@
             color: #64748b;
             font-size: 0.95rem;
         }
+
+        #virtual-pet-container {
+            position: fixed;
+            bottom: 20px;
+            right: 25px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .pet-speech {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border: 2px solid #38bdf8;
+            padding: 8px 14px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            max-width: 210px;
+            text-align: center;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .pet-speech::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: #38bdf8 transparent transparent;
+        }
+
+        #pet-character {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: floatPet 2.5s ease-in-out infinite;
+        }
+
+        .pet-antenna {
+            width: 4px;
+            height: 12px;
+            background-color: #0284c7;
+            position: relative;
+        }
+
+        .pet-antenna::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -4px;
+            width: 12px;
+            height: 12px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #38bdf8;
+        }
+
+        .pet-body {
+            width: 85px;
+            height: 68px;
+            background: linear-gradient(145deg, #38bdf8, #0284c7);
+            border-radius: 45% 45% 35% 35%;
+            position: relative;
+            box-shadow: inset -5px -5px 12px rgba(0, 0, 0, 0.2), 0 6px 15px rgba(56, 189, 248, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        #pet-character:active .pet-body {
+            transform: scale(1.15, 0.85);
+        }
+
+        .pet-eyes {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 4px;
+        }
+
+        .eye {
+            width: 18px;
+            height: 18px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pupil {
+            width: 9px;
+            height: 9px;
+            background-color: #0f172a;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.05s linear;
+        }
+
+        .pet-mouth {
+            width: 12px;
+            height: 6px;
+            border-bottom: 3px solid #0f172a;
+            border-radius: 0 0 10px 10px;
+            transition: all 0.2s;
+        }
+
+        .pet-mouth.happy {
+            height: 10px;
+            background-color: #0f172a;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .pet-blush {
+            position: absolute;
+            top: 38px;
+            width: 10px;
+            height: 5px;
+            background-color: rgba(244, 114, 182, 0.7);
+            border-radius: 50%;
+        }
+
+        .pet-blush.left { left: 12px; }
+        .pet-blush.right { right: 12px; }
+
+        .pet-shadow {
+            width: 65px;
+            height: 10px;
+            background-color: rgba(15, 23, 42, 0.2);
+            border-radius: 50%;
+            margin-top: 6px;
+            animation: shadowScale 2.5s ease-in-out infinite;
+        }
+
+        .pet-controls {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 8px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .pet-controls button {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            padding: 2px 4px;
+        }
+
+        .pet-controls button:hover {
+            transform: scale(1.25);
+        }
+
+        @keyframes floatPet {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @keyframes shadowScale {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(0.85); opacity: 0.15; }
+        }
+
+        .jump-animation {
+            animation: jumpHappy 0.4s ease !important;
+        }
+
+        @keyframes jumpHappy {
+            0%, 100% { transform: translateY(0) scale(1, 1); }
+            40% { transform: translateY(-25px) scale(0.9, 1.1); }
+            70% { transform: translateY(0) scale(1.15, 0.85); }
+        }
     </style>
+
 </head>
+
 <body>
 
     <nav>
@@ -354,15 +545,110 @@
             </div>
         </section>
 
-        <selection>
-            <div class="sketchfab-embed-wrapper"> <iframe title="Watchman of doom" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/915a33262d7145acbf3764391c972a85/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/watchman-of-doom-915a33262d7145acbf3764391c972a85" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Watchman of doom </a> by <a href="https://sketchfab.com/html_bot23" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> html_bot23 </a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-        </selection>
-
     </div>
 
     <footer>
         <p>&copy; 2026 Albert Natanael. Dibuat dengan HTML & CSS.</p>
     </footer>
 
+    <div id="virtual-pet-container">
+        <div id="pet-speech" class="pet-speech">Halo! Aku asisten virtual Albert 👋</div>
+
+        <div id="pet-character" title="Klik aku atau beri makan!">
+            <div class="pet-antenna"></div>
+            <div class="pet-body">
+                <div class="pet-eyes">
+                    <div class="eye"><div class="pupil"></div></div>
+                    <div class="eye"><div class="pupil"></div></div>
+                </div>
+                <div class="pet-mouth"></div>
+                <div class="pet-blush left"></div>
+                <div class="pet-blush right"></div>
+            </div>
+            <div class="pet-shadow"></div>
+        </div>
+
+        <div class="pet-controls">
+            <button onclick="feedPet('kopi')" title="Beri Kopi">☕</button>
+            <button onclick="feedPet('mie')" title="Beri Mi Instan">🍜</button>
+            <button onclick="petHead()" title="Elus Kepala">✋</button>
+        </div>
+    </div>
+
+
+    <script>
+        const petCharacter = document.getElementById('pet-character');
+        const petSpeech = document.getElementById('pet-speech');
+        const petMouth = document.querySelector('.pet-mouth');
+        const pupils = document.querySelectorAll('.pupil');
+
+        const randomDialogues = [
+            "Jangan lupa commit & push kodenya ya! 💻",
+            "Error di baris 42? Coba cek titik komanya 😉",
+            "Albert lagi fokus ngoding, aku yang jagain halaman ini!",
+            "Butuh asupan kafein segera... ☕",
+            "Hobi Albert main gitar & drum, kalau aku hobinya makan RAM!",
+            "Halo pengunjung! Terima kasih sudah mampir 👋",
+            "Status saat ini: 99% ngoding, 1% tidur 😴"
+        ];
+
+        let speechTimeout;
+
+        function saySomething(text) {
+            petSpeech.textContent = text;
+            petSpeech.style.opacity = '1';
+            petSpeech.style.transform = 'translateY(0)';
+            
+            petMouth.classList.add('happy');
+            setTimeout(() => petMouth.classList.remove('happy'), 1200);
+
+            clearTimeout(speechTimeout);
+            speechTimeout = setTimeout(() => {
+                petSpeech.style.opacity = '0.85';
+            }, 4000);
+        }
+
+        petCharacter.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * randomDialogues.length);
+            saySomething(randomDialogues[randomIndex]);
+            triggerJump();
+        });
+
+        function feedPet(food) {
+            triggerJump();
+            if (food === 'kopi') {
+                saySomething("Slurp! Kafein +100! Siap begadang debugging! ⚡☕");
+            } else if (food === 'mie') {
+                saySomething("Nyam! Mi instan penyelamat mahasiswa akhir bulan! 🍜❤️");
+            }
+        }
+
+        function petHead() {
+            triggerJump();
+            saySomething("Hehe geli~ Terima kasih sudah dielus! 🥰✨");
+        }
+
+        function triggerJump() {
+            petCharacter.classList.remove('jump-animation');
+            void petCharacter.offsetWidth; // Trigger reflow agar animasi bisa diulang
+            petCharacter.classList.add('jump-animation');
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            pupils.forEach((pupil) => {
+                const rect = pupil.parentElement.getBoundingClientRect();
+                const eyeCenterX = rect.left + rect.width / 2;
+                const eyeCenterY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
+                const maxDistance = 4; // Jarak maksimal gerak pupil di dalam bola mata
+
+                const pupilX = Math.cos(angle) * maxDistance;
+                const pupilY = Math.sin(angle) * maxDistance;
+
+                pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
