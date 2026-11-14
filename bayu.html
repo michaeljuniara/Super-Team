@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- Memakai MDN sebagai referensi. Dibantu michaeljuniara, terutama dalam pembuatan tabel dan pemakaian git.
+Referensi tambahan  : https://forum.ionicframework.com/t/solved-html-table-border/107645, 
+                    https://git-scm.com/cheat-sheet-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: azure;
+            margin: 0px;
+        }
+        #content{
+            display: flex;
+            background-color:aquamarine;
+        }
+        
+        #desc{
+            *{
+                margin: 3vh;
+            }
+            
+        }
+
+        table{
+            border: 3px solid black;
+            border-collapse:collapse;
+            th{
+                border: 1px solid black;
+                padding: 5px;
+                background-color: pink;
+            }
+
+            td{
+                border: 1px solid black;
+                padding: 3px;
+            }
+            tr{
+                border: 1px solid black;
+                padding: 3px;
+                background-color: white;
+            }
+        }
+
+        #picture{
+            padding:10px;
+            background-color:bisque;
+            box-shadow: 3px 3px 3px;
+        }
+
+        #target{
+            display: flex;
+            background-color: purple;
+            width: 10vw;
+            height: 10vh;
+            color: yellow;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+            border-style:double;
+            border-radius: 10px;
+        }
+
+        #name{
+            margin: 0px;
+            padding: 0px;
+            font-size: larger;
+            color: goldenrod;
+            font-style: italic;
+            text-shadow: 1px 1px red;
+            font-weight: 900;
+        }
+
+        .subsection{
+            margin: 0px;
+            padding: 0px;
+            font-size: larger;
+            color: blueviolet;
+            font-style: italic;
+            text-shadow: 1px 1px violet;
+            font-weight: 900;
+        }
+
+        #header{
+            margin: 0px;
+            padding: 0px;
+            background-color:brown;
+            display: flex;
+
+        }
+        h1{
+            margin: 0px;
+            height:10vh;
+            align-items: center;
+            align-self: center;
+            align-content: center;
+        }
+
+        #game-container{
+            margin: 5vh;
+            background-color: violet;
+            width: 30vw;
+            height: 30vh;
+            border-style: dashed;
+        }
+    </style>
+
+    <script src="bayuScript.js" defer></script>
+</head>
+<body>
+    <div id="header"><h1>Hi, I'm <span id="name">Bayu!</span></h1></div>
+    <div id="content">
+        <img src="bayuProfile.png" alt="" srcset="" id="picture">
+        <div id="desc">
+            
+            <div><span class="subsection"> Hobi: </span>bersepeda, main arcade</div>
+            <div><span class="subsection"> Keahlian: </span>Java Spring Programming, Godot, 3D Modelling</div>
+            <div>What I've been doing:</div>
+            <!-- <table>
+                <thead>
+                    <th>
+                        Tanggal
+                    </th>
+                    <th>
+                        Aktivitas
+                    </th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>10 Oktober 2026</td>
+                        <td>Kerja Tugas</td>
+                    </tr>
+
+                    <tr>
+                        <td>11 Oktober 2026</td>
+                        <td>Kerja Tugas</td>
+                    </tr>
+
+                    <tr>
+                        <td>12 Oktober 2026</td>
+                        <td>Tidur</td>
+                    </tr>
+                    <tr>
+                        <td>13 Oktober 2026</td>
+                        <td>Kerja Tugas</td>
+                    </tr>
+                    <tr>
+                        <td>14 Oktober 2026</td>
+                        <td>Kerja Tugas</td>
+                    </tr>
+                </tbody>
+                
+            </table> -->
+            
+        </div>
+    </div>
+
+    <div id="game-container">
+        <div id="target">hit me!</div>
+    </div>
+
+    
+</body>
+</html>
